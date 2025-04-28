@@ -1,5 +1,5 @@
 <?php
-include('D:/CarpetaP/htdocs/Suminex/backend/verificar_sesion_coordinador.php');
+include('../../backend/verificar_sesion_coordinador.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

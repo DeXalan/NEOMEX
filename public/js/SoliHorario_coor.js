@@ -1,14 +1,11 @@
-// Función para cargar las solicitudes de cambio de horario desde la base de datos
 function cargarSolicitudes() {
     const lista = document.getElementById("solicitudes-list");
-    lista.innerHTML = ""; // Limpiar la lista antes de cargarla nuevamente
+    lista.innerHTML = "";
 
-    // Aquí realizaríamos una petición al servidor para obtener las solicitudes de la base de datos
     fetch("obtener_solicitudes.php")
-        .then(response => response.json()) // Suponiendo que el backend retorna los datos en formato JSON
+        .then(response => response.json())
         .then(solicitudes => {
             solicitudes.forEach((solicitud) => {
-                // Solo mostramos las solicitudes que están en espera
                 if (solicitud.estado === "espera") {
                     let div = document.createElement("div");
                     div.classList.add("solicitud-card");
