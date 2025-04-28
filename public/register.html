@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h2>Registro</h2>
+    <form action="/SUMINEX/backend/registrar.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+        <label for="numeroControl">Número de Control:</label>
+        <input type="text" name="numeroControl" required>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" required>
+        <label for="rol">Rol:</label>
+        <select name="rol">
+            <option value="Alumno">Alumno</option>
+            <option value="Maestro">Maestro</option>
+            <option value="Coordinador">Coordinador</option>
+        </select>
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>

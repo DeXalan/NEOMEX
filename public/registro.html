@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header class="header-inicio">
+        <h1>Inicio de Sesión</h1>        
+        <button class="logout-button" onclick="volver()">🡸</button>        
+    </header>
+    <footer>
+    <div class="login-container">
+        <h1 class="h1-log">Registro</h1>
+        <form action="/SUMINEX/backend/registrar.php" method="POST">
+            <label for="numeroControl">No. Control:</label>
+            <input type="text" id="control" name="numeroControl" placeholder="Ingrese su No. Control" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="email" name="correo" placeholder="Ingrese su correo" required>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="password" name="contraseña" placeholder="Ingrese su contraseña" required>
+
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme su contraseña" required>
+
+            <button type="submit" class="button-s">Registrarse</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </div>
+    <script src="js/scriptlogin.js"></script>
+    <script>
+        function volver(event) {
+            window.location.href = "inicio.html"; 
+        }
+    </script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilidad del Coordinador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="header-c">
+        <button class="logout-button" id="btn-volver" data-origen="">🡸</button>
+        <h1>Disponibilidad del Coordinador</h1>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <div class="container">
+        <h2>Horarios Disponibles</h2>
+        <table class="table-ud">
+            <thead>
+                <tr>
+                    <th class="th-ud">Día</th>
+                    <th class="th-ud">Hora Inicio</th>
+                    <th class="th-ud">Hora Fin</th>
+                </tr>
+            </thead>
+            <tbody id="disponibilidad-body">
+                <!-- Horarios se agregarán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const disponibilidad = [
+            { dia: "Lunes", inicio: "09:00", fin: "12:00" },
+            { dia: "Martes", inicio: "14:00", fin: "16:00" },
+            { dia: "Miércoles", inicio: "10:00", fin: "13:00" }
+        ];
+
+        function cargarDisponibilidad() {
+            const tbody = document.getElementById("disponibilidad-body");
+            tbody.innerHTML = "";
+            disponibilidad.forEach(horario => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td class="td-ud">${horario.dia}</td>
+                    <td class="td-ud">${horario.inicio}</td>
+                    <td class="td-ud">${horario.fin}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function volver(){
+            window.location.href = "menu-alu.html";
+        }
+
+        function cerrarSesion(){
+            window.location.href = "login.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", cargarDisponibilidad);
+
+
+        //Redirigir al menu correcto
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const origen = params.get("origen") || "menu-alu.html"; // Valor por defecto
+
+            const btnVolver = document.getElementById("btn-volver");
+            if (btnVolver) {
+                btnVolver.setAttribute("data-origen", origen);
+                btnVolver.addEventListener("click", function() {
+                    window.location.href = this.getAttribute("data-origen");
+                });
+            }
+        });
+
+
+    </script>
+</body>
+</html>

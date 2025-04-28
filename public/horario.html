@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Horario</title>
+</head>
+<body>
+    <h2>Registrar Horario No Disponible</h2>
+    <form action="/SUMINEX/backend/guardar_horario.php" method="POST">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required>
+        <label for="horaInicio">Hora Inicio:</label>
+        <input type="time" name="horaInicio" min="09:00" max="19:00" required>
+        <label for="horaFin">Hora Fin:</label>
+        <input type="time" name="horaFin" min="09:00" max="19:00" required>
+        <input type="checkbox" name="todoElDia" value="1"> No disponible todo el día
+        <button type="submit">Guardar Horario</button>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>

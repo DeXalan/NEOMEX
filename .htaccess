@@ -1,0 +1,20 @@
+# Habilitar mod_rewrite
+RewriteEngine On
+
+# Redirigir automáticamente al index.html si no hay archivo especificado
+DirectoryIndex index.html
+
+# Reescribir URLs amigables (Ejemplo: /login → /login.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.html [L]
+
+# Proteger archivos sensibles
+<FilesMatch "(\.htaccess|\.env|config\.php)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Configurar el manejo de errores
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
