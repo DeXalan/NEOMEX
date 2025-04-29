@@ -26,7 +26,7 @@ document.getElementById('form_cita').addEventListener('submit', async function(e
                 text: result.message,
                 confirmButtonText: 'Aceptar'
             }).then(() => {
-                window.location.href = "../alumno/menu-alu.php"; // Redirigir después de aceptar
+                window.location.href = "../menu-alu.php"; // Redirigir después de aceptar
             });
         } else {
             Swal.fire({
