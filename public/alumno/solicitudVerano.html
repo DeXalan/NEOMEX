@@ -127,6 +127,39 @@
                 alert("⚠️ Por favor, complete todos los campos.");
             }
         }
+        function enviarSolicitud(event) {
+    event.preventDefault();
+
+    let numeroControl = document.getElementById("numeroControl").value;
+    let nombre = document.getElementById("nombre").value;
+    let materia = document.getElementById("materia").value;
+
+    if (numeroControl && nombre && materia) {
+        fetch("procesar_solicitud.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `numeroControl=${encodeURIComponent(numeroControl)}&nombre=${encodeURIComponent(nombre)}&materia=${encodeURIComponent(materia)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                document.getElementById("mensaje-confirmacion").style.display = "block";
+                document.getElementById("form-solicitud").reset();
+            } else {
+                alert(data.mensaje);
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("❌ Error al enviar la solicitud.");
+        });
+    } else {
+        alert("⚠️ Por favor, complete todos los campos.");
+    }
+}
+
     </script>
 </body>
 </html>
