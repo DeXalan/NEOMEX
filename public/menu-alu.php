@@ -1,3 +1,4 @@
+<?php include("../backend/Verificar_alumno.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
