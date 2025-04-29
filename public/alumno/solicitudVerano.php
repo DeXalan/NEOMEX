@@ -1,3 +1,4 @@
+<?php include("../../backend/Verificar_alumno.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -135,7 +136,7 @@
     let materia = document.getElementById("materia").value;
 
     if (numeroControl && nombre && materia) {
-        fetch("procesar_solicitud.php", {
+        fetch("../../backend/procesar_solicitud.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
