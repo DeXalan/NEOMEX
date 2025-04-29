@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $numeroControl = $_POST['numeroControl'];
     $contraseña = $_POST['contraseña'];
 
-    $sql = "SELECT id, nombre, contraseña, rol FROM Usuario WHERE numeroControl = ?";
+    $sql = "SELECT id, nombre, contraseña, rol, numeroControl FROM Usuario WHERE numeroControl = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $numeroControl);
     $stmt->execute();
@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['id'] = $row['id'];
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['rol'] = $row['rol'];
-
+            $_SESSION['numeroControl'] = $row['numeroControl'];
             // Redirige según el rol
             switch ($row['rol']) {
                 case 'Alumno':
-                    header("Location: ../public/menu-alu.html");
+                    header("Location: ../public/menu-alu.php");
                     break;
                 case 'Maestro':
                     header("Location: ../public/menu-maes.html");

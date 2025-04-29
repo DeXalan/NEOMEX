@@ -23,7 +23,7 @@ include('../../backend/verificar_sesion_coordinador.php');
         </div>
     </div>
 
-    <script src="../js/SoliHorario_coor.js"></script>
+    <script src="../../js/SoliHorario_coor.js"></script>
     <script>
         function volver() {
             window.location.href = "../menu-coor.php"

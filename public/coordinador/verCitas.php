@@ -8,6 +8,7 @@ include('../../backend/verificar_sesion_coordinador.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Citas Programadas</title>
     <link rel="stylesheet" href="estiloos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="header_Citas">
@@ -43,7 +44,7 @@ include('../../backend/verificar_sesion_coordinador.php');
             window.location.href = "../menu-coor.php"
         }
     </script>
-    <script src="../js/citas_coor.js"></script>
+    <script src="../../js/citas_coor.js"></script>
 </body>
 </html>
     

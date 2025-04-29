@@ -18,8 +18,8 @@
         <h1 class="menu-h1">Menú</h1>
         <div class="menu">
             <h2 class="menu-h2">Alumno</h2>
-            <button class="menu-button" onclick="irA('alumno/cita.html')">Solicitar Cita</button>
-            <button class="menu-button" onclick="irA('alumno/citaUD.html')">Modificar Cita</button>             
+            <button class="menu-button" onclick="irA('alumno/cita.php')">Solicitar Cita</button>
+            <button class="menu-button" onclick="irA('alumno/citaUD.php')">Modificar Cita</button>             
             <br>
             <button class="menu-button" onclick="irA('alumno/solicitudVerano.html')">Solicitar Materia de Verano</button>
             <button class="menu-button" onclick="irA('alumno/solicitudCambio.html')">Solicitar Cambio de Horario</button>

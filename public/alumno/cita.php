@@ -1,3 +1,4 @@
+<?php include("../../backend/Verificar_alumno.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitud de Citas</title>
     <link rel="stylesheet" href="estilooo.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="header-c">
@@ -14,12 +16,12 @@
     </div>
     <div class="cita-container">
         <h2>Solicita</h2>
-        <form class="form_cita">
-          <label for="nombre">Nombre:</label>
-          <input class="input-c" type="text" id="nombre" name="nombre" required>
-      
-          <label for="num_control">Número de Control:</label>
-          <input class="input-c" type="text" id="num_control" name="num_control" required>
+        <form id="form_cita" class="form_cita">
+            <label for="nombre">Nombre:</label>
+            <input class="input-c" type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>" readonly required>
+
+            <label for="num_control">Número de Control:</label>
+            <input class="input-c" type="text" id="num_control" name="num_control" value="<?php echo htmlspecialchars($numeroControl); ?>" readonly required>
       
           <label for="fecha">Fecha:</label>
           <input class="input-c" type="date" id="fecha" name="fecha" required>
@@ -33,14 +35,7 @@
           <button type="submit" class="button_cita">Solicitar Cita</button>
         </form>
 
-        <script>
-            function volver(){
-                window.location.href="../menu-alu.html";
-            }
-            function cerrarSesion() {
-                window.location.href = "../login.html";
-            }
-        </script>
+        <script src="../../js/citas_alum.js"></script>
       </div>
 
 </body>

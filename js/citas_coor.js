@@ -3,7 +3,7 @@
 // Función para cargar las citas al cargar la página
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        const response = await fetch('../../backend/citas_programadas.php'); // <- Ajusta si tu PHP se llama diferente
+        const response = await fetch('../../backend/obtener_citas.php');
         const citas = await response.json();
 
         const citasList = document.getElementById('citas-list');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 });
 
-// Función para cancelar una cita
+// Función para cancelar una cita con motivo
 function cancelarCita(id) {
     Swal.fire({
         title: '¿Estás seguro?',
@@ -56,9 +56,26 @@ function cancelarCita(id) {
         cancelButtonText: 'No, conservar'
     }).then(async (result) => {
         if (result.isConfirmed) {
+            const { value: motivo } = await Swal.fire({
+                title: 'Motivo de cancelación',
+                input: 'textarea',
+                inputLabel: 'Escribe el motivo',
+                inputPlaceholder: 'Motivo...',
+                inputAttributes: {
+                    'aria-label': 'Motivo de la cancelación'
+                },
+                showCancelButton: true
+            });
+
+            if (!motivo) {
+                Swal.fire('Cancelación abortada', 'Debes ingresar un motivo para cancelar.', 'info');
+                return;
+            }
+
             try {
                 const formData = new FormData();
                 formData.append('id', id);
+                formData.append('motivo', motivo);
 
                 const response = await fetch('../../backend/cancelar_cita.php', {
                     method: 'POST',
@@ -80,3 +97,4 @@ function cancelarCita(id) {
         }
     });
 }
+

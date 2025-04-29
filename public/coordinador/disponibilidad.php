@@ -18,7 +18,7 @@ include('../../backend/verificar_sesion_coordinador.php');
     </header>
 
     <div class="container">
-        <form action="/suminex/backend/guardar_horario.php" method="POST">
+        <form action="../../backend/guardar_horario.php" method="POST">
             <label for="fecha">Fecha:</label>
             <input type="date" name="fecha" required>
             <label for="horaInicio">Hora Inicio:</label>
@@ -35,7 +35,7 @@ include('../../backend/verificar_sesion_coordinador.php');
             <ul id="lista-disponibilidad"></ul>
         </div>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="../../js/script.js"></script>
     <script>
         function agregarDisponibilidad() {
             let dia = document.getElementById("dia").value;

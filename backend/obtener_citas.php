@@ -1,9 +1,12 @@
 <?php
 require_once 'conexion.php';
 
+// Solo mostrar citas donde cancelada = 0
 $sql = "SELECT c.id, u.nombre AS alumno, c.fecha, c.hora, c.asunto 
         FROM Cita c 
-        INNER JOIN Usuario u ON c.numeroControl = u.numeroControl";
+        INNER JOIN Usuario u ON c.numeroControl = u.numeroControl
+        WHERE c.cancelada = 0";
+
 $result = $conn->query($sql);
 
 $citas = [];

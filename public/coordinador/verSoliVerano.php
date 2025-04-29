@@ -43,7 +43,7 @@ include('../../backend/verificar_sesion_coordinador.php');
     }
 
     function cargarSolicitudes() {
-      fetch("obtener_solicitudes_verano.php")
+      fetch("../../backend/obtener_solicitudes_verano.php")
         .then(response => response.json())
         .then(data => {
           const tabla = document.getElementById("tabla-solicitudes");
@@ -68,7 +68,7 @@ include('../../backend/verificar_sesion_coordinador.php');
     }
 
     function actualizarEstado(id, estado) {
-      fetch("actualizar_estado_verano.php", {
+      fetch("../../backend/actualizar_estado_verano.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
