@@ -28,7 +28,6 @@ include('../../backend/verificar_sesion_coordinador.php');
         </tr>
       </thead>
       <tbody id="tabla-solicitudes">
-        <!-- Carga dinámica -->
       </tbody>
     </table>
   </div>

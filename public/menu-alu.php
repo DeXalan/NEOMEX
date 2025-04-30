@@ -20,9 +20,9 @@
             <h2 class="menu-h2">Alumno</h2>
             <button class="menu-button" onclick="irA('alumno/cita.php')">Solicitar Cita</button>
             <button class="menu-button" onclick="irA('alumno/citaUD.php')">Modificar Cita</button>             
-            <br>
+            <button class="menu-button" onclick="irA('alumno/estado.php')">Comprobar Solicitudes</button>
             <button class="menu-button" onclick="irA('alumno/solicitudVerano.php')">Solicitar Materia de Verano</button>
-            <button class="menu-button" onclick="irA('alumno/solicitudCambio.html')">Solicitar Cambio de Horario</button>
+            <button class="menu-button" onclick="irA('alumno/solicitudCambio.php')">Solicitar Cambio de Horario</button>
         </div>
         
     </div>

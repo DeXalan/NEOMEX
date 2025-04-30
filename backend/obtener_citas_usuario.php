@@ -2,9 +2,9 @@
 session_start();
 require_once "conexion.php";
 
-$id_usuario = $_SESSION['user_id'];
+$id_usuario = $_SESSION['numeroControl'];
 
-$sql = "SELECT id, fecha, hora, asunto FROM cita WHERE numeroControl = ?";
+$sql = "SELECT id, fecha, hora, asunto FROM cita WHERE numeroControl = ? AND cancelada = 0";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $id_usuario);
 $stmt->execute();

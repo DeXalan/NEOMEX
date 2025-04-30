@@ -1,3 +1,4 @@
+<?php include("../../backend/Verificar_alumno.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,9 +16,10 @@
 
     <div class="container">
         <h2>Complete los datos</h2>
-        <form id="solicitud-form">
+        <!-- AÑADIDO: enctype para soportar archivos -->
+        <form id="solicitud-form" enctype="multipart/form-data" method="POST" action="../../backend/enviar_cambio_horario.php">
             <label for="control">Número de Control:</label>
-            <input type="text" id="control" name="control" required>
+            <input type="text" id="control" name="control" value="<?php echo $numeroControl; ?>" readonly>
 
             <label for="nombre">Nombre del Alumno:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -33,25 +35,21 @@
             <label for="motivo">Motivo:</label>
             <textarea id="motivo" name="motivo" required></textarea>
 
+            <!-- NUEVO: campo para subir imagen -->
+            <label for="horario_imagen">Adjuntar imagen del horario (JPG, PNG):</label>
+            <input type="file" id="horario_imagen" name="horario_imagen" accept="image/*" required>
+
             <button class="button-b" type="submit">Enviar Solicitud</button>
         </form>
     </div>
 
     <script>
         function volver(){
-            window.location.href="../menu-alu.html";
+            window.location.href="../menu-alu.php";
         }
         function cerrarSesion() {
             window.location.href = "../login.html";
         }
-
-        document.getElementById("solicitud-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Solicitud enviada correctamente.");
-            document.getElementById("solicitud-form").reset();
-            document.getElementById("materias-agregar").innerHTML = "";
-            document.getElementById("materias-baja").innerHTML = "";
-        });
 
         let contadorAgregar = 0;
         let contadorBaja = 0;

@@ -44,7 +44,7 @@
         }
 
         function volver(){
-            window.location.href = "../menu-alu.html";
+            window.location.href = "../menu-alu.php";
         }
 
         function cerrarSesion(){
