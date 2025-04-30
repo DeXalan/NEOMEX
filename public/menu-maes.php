@@ -1,3 +1,4 @@
+<?php include("../backend/Verificar_maestro.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,8 +18,8 @@
         <h1 class="menu-h1">Menú</h1>
         <div class="menu">
             <h2 class="menu-h2">Maestro</h2>
-            <button class="menu-button" onclick="irA('maestro/cita.html')">Solicitar Cita</button>
-            <button class="menu-button" onclick="irA('maestro/citaUD.html')">Modificar Cita</button>
+            <button class="menu-button" onclick="irA('maestro/cita.php')">Solicitar Cita</button>
+            <button class="menu-button" onclick="irA('maestro/citaUD.php')">Modificar Cita</button>
         </div>
 
     </div>

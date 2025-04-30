@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (/^lis\d{8}@irapuato\.tecnm\.mx$/.test(correo)) {
             rol = 'Alumno';
         } else if (/^[a-z]+\.[a-z]+@irapuato\.tecnm\.mx$/.test(correo)) {
-            rol = 'Maestro o Coordinador';
+            rol = 'Maestro';
         } else {
             rol = 'Correo no válido';
         }

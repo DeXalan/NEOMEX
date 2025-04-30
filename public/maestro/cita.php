@@ -1,3 +1,4 @@
+<?php include("../../backend/Verificar_maestro.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,12 +15,12 @@
     </div>
     <div class="cita-container">
         <h2>Solicita</h2>
-        <form class="form_cita">
-          <label for="nombre">Nombre:</label>
-          <input class="input-c" type="text" id="nombre" name="nombre" required>
-      
-          <label for="num_control">Número de Control:</label>
-          <input class="input-c" type="text" id="num_control" name="num_control" required>
+        <form id="form_cita" class="form_cita">
+        <label for="nombre">Nombre:</label>
+            <input class="input-c" type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>" readonly required>
+
+            <label for="num_control">Número de Control:</label>
+            <input class="input-c" type="text" id="num_control" name="num_control" value="<?php echo htmlspecialchars($numeroControl); ?>" readonly required>
       
           <label for="fecha">Fecha:</label>
           <input class="input-c" type="date" id="fecha" name="fecha" required>
@@ -33,15 +34,14 @@
           <button type="submit" class="button_cita">Solicitar Cita</button>
         </form>
 
+        <script src="../../js/citas_maes.js"></script>
         <script>
             function volver(){
-                window.location.href="../menu-maes.html";
+                window.location.href="../menu-maes.php";
             }
             function cerrarSesion() {
                 window.location.href = "../login.html";
             }
-
-
         </script>
       </div>
 
