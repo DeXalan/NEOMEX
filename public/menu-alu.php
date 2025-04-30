@@ -21,7 +21,7 @@
             <button class="menu-button" onclick="irA('alumno/cita.php')">Solicitar Cita</button>
             <button class="menu-button" onclick="irA('alumno/citaUD.php')">Modificar Cita</button>             
             <br>
-            <button class="menu-button" onclick="irA('alumno/solicitudVerano.html')">Solicitar Materia de Verano</button>
+            <button class="menu-button" onclick="irA('alumno/solicitudVerano.php')">Solicitar Materia de Verano</button>
             <button class="menu-button" onclick="irA('alumno/solicitudCambio.html')">Solicitar Cambio de Horario</button>
         </div>
         
