@@ -39,4 +39,6 @@ document.getElementById('form_cita').addEventListener('submit', async function(e
             confirmButtonText: 'Aceptar'
         });
     }
+
+    
 });

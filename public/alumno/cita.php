@@ -36,6 +36,13 @@
         </form>
 
         <script src="../../js/citas_alum.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const fechaInput = document.getElementById('fecha');
+                const hoy = new Date().toISOString().split('T')[0];
+                fechaInput.min = hoy;
+            });
+        </script>
       </div>
 
 </body>
