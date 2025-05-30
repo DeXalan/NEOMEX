@@ -81,7 +81,7 @@
 }
 
 /* Sección Derecha: Disponibilidad */
-.right-section {
+.right-section .tabla-horarios{
     width: 50%;
     background: white;
     padding: 20px;
@@ -89,17 +89,17 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.right-section h2 {
+.right-section .tabla-horarios h2 {
     text-align: center;
     color: #2c3e50;
 }
 
-.right-section ul {
+.right-section .tabla-horarios ul {
     list-style: none;
     padding: 0;
 }
 
-.right-section li {
+.right-section .tabla-horarios li {
     background: #4cae4c;
     color: white;
     margin: 5px 0;
