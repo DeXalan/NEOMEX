@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sssss", $nombre, $numeroControl, $correo, $contraseña, $rol);
     
     if ($stmt->execute()) {
-        // Mostrar SweetAlert
+        require_once 'correo_confirmacion.php';
+        enviarCorreoConfirmacion($correo, $nombre);
         echo "
         <!DOCTYPE html>
         <html lang='es'>

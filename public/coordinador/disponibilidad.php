@@ -28,12 +28,22 @@ include('../../backend/verificar_sesion_coordinador.php');
             <input type="checkbox" name="todoElDia" value="1"> No disponible todo el día
             <button type="submit">Guardar Horario</button>
         </form>
-
-        <!-- Lista donde se mostrarán las disponibilidades agregadas -->
-        <div class="disponibilidad-list">
+        <div class="tabla-horarios">
             <h2>Registro De Horas No Disponibles</h2>
-            <ul id="lista-disponibilidad"></ul>
+            <table border="1" id="tabla-horarios">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora Inicio</th>
+                        <th>Hora Fin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Se llena con JavaScript -->
+                </tbody>
+            </table>
         </div>
+
     </div>
     <script src="../../js/script.js"></script>
     <script>
@@ -69,6 +79,28 @@ include('../../backend/verificar_sesion_coordinador.php');
         function volver() {
             window.location.href = "../menu-coor.php"
         }
+        // Cargar horarios no disponibles desde hoy
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("../../backend/obtener_horarios.php")
+                .then(response => response.json())
+                .then(data => {
+                    const tabla = document.querySelector("#tabla-horarios tbody");
+                    tabla.innerHTML = "";
+
+                    data.forEach(horario => {
+                        const fila = document.createElement("tr");
+                        fila.innerHTML = `
+                            <td>${horario.fecha}</td>
+                            <td>${horario.horaInicio}</td>
+                            <td>${horario.horaFin}</td>
+                        `;
+                        tabla.appendChild(fila);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar horarios:", error);
+                });
+        });
     </script>
 
 </body>
